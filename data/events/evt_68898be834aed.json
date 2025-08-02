@@ -1,0 +1,20 @@
+{
+    "id": "evt_68898be834aed",
+    "title": "Manchester United vs. Chelsea",
+    "description": "Epl",
+    "outcomes": [
+        {
+            "name": "Manchester United wins",
+            "odds": 3.2
+        },
+        {
+            "name": "Draw ",
+            "odds": 3.7
+        },
+        {
+            "name": "Chelsea wins",
+            "odds": 1.87
+        }
+    ],
+    "status": "open"
+}

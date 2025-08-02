@@ -1,0 +1,353 @@
+
+/* Odibets-inspired vibrant green theme */
+:root {
+    --odigreen: #43b02a;
+    --odigreen-dark: #388e1f;
+    --odiyellow: #ffe600;
+    --odiblack: #181c24;
+    --odigrey: #f4f4f4;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--odiblack);
+    color: #222;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container, .container-fluid {
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+main {
+    flex: 1;
+}
+
+/* Header/Nav */
+header, .navbar, .navbar-dark.bg-dark {
+    background: var(--odigreen) !important;
+    color: #fff;
+    border-bottom: 4px solid var(--odiyellow);
+}
+.navbar-brand, .nav-link, .navbar-nav .nav-link.active {
+    color: #fff !important;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+.nav-link:hover, .navbar-brand:hover {
+    color: var(--odiyellow) !important;
+}
+
+/* Buttons */
+.btn, .btn-primary, .btn-success, .outcome-button {
+    background: var(--odigreen) !important;
+    color: #fff !important;
+    border: none;
+    border-radius: 30px !important;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 10px 28px;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(67,176,42,0.10);
+}
+.btn:hover, .btn-primary:hover, .btn-success:hover, .outcome-button:hover {
+    background: var(--odigreen-dark) !important;
+    color: #fff !important;
+    box-shadow: 0 4px 16px rgba(67,176,42,0.18);
+}
+
+/* Cards & Containers */
+.card, .event, .bet-card, .details-container {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(67,176,42,0.10);
+    border: none;
+    margin-bottom: 24px;
+    padding: 24px 20px;
+    position: relative;
+}
+.card-header, .event h2, .bet-card .card-header {
+    background: var(--odigreen);
+    color: #fff;
+    border-radius: 14px 14px 0 0;
+    padding: 16px 20px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: -24px -20px 20px -20px;
+}
+
+/* User Bets - Hide/Show Details */
+.bet-details {
+    display: none;
+    background: var(--odigrey);
+    border-radius: 12px;
+    margin-top: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(67,176,42,0.08);
+}
+.bet-card.active .bet-details {
+    display: block;
+    animation: fadeIn 0.3s;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* User Selection Highlight */
+.user-selection {
+    background: var(--odiyellow);
+    color: #222;
+    border-radius: 8px;
+    padding: 4px 12px;
+    font-weight: bold;
+    margin-left: 8px;
+    font-size: 1rem;
+}
+
+/* Odds & Outcomes */
+.odds, .outcomes {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+.outcome-button {
+    flex: 1 1 120px;
+    background: var(--odigreen);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background 0.2s;
+}
+.outcome-button.selected, .outcome-button:active {
+    background: var(--odiyellow);
+    color: #222;
+}
+
+/* Tables */
+.table {
+    color: #222;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(67,176,42,0.08);
+}
+.table th {
+    background: var(--odigreen);
+    color: #fff;
+    font-weight: bold;
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #f4f4f4;
+}
+
+/* Form improvements */
+.form-control, .form-select {
+    background: #fff;
+    color: #222;
+    border: 2px solid var(--odigreen);
+    border-radius: 10px;
+    font-size: 1.1rem;
+    padding: 12px 14px;
+}
+.form-control:focus, .form-select:focus {
+    border-color: var(--odiyellow);
+    box-shadow: 0 0 0 0.2rem rgba(255,230,0,0.15);
+}
+
+/* Footer */
+footer {
+    background: var(--odigreen);
+    color: #fff;
+    border-top: 4px solid var(--odiyellow);
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* Utility */
+.shadow-sm {
+    box-shadow: 0 2px 8px rgba(67,176,42,0.12) !important;
+}
+.fw-bold {
+    font-weight: bold !important;
+}
+.mt-auto {
+    margin-top: auto !important;
+}
+
+/* Toasts & Messages */
+.message {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    background: var(--odiyellow);
+    color: #222;
+    box-shadow: 0 2px 8px rgba(67,176,42,0.10);
+}
+.message.error {
+    background-color: #ff4d4d;
+    color: #fff;
+}
+.message.success {
+    background-color: #43b02a;
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .card, .event, .bet-card, .details-container {
+        padding: 14px 6px;
+    }
+    .card-header, .event h2, .bet-card .card-header {
+        font-size: 1.1rem;
+        padding: 10px 8px;
+    }
+    .btn, .btn-primary, .btn-success, .outcome-button {
+        font-size: 1rem;
+        padding: 8px 10px;
+    }
+}
+
+/* Form Styles */
+.form-container {
+    width: 100%;
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #2c2c2c;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.form-container h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #00aaff;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    background: #1a1a1a;
+    border: 1px solid #444;
+    border-radius: 5px;
+    color: #f0f0f0;
+    font-size: 16px;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    background: #00aaff;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background: #0088cc;
+}
+
+/* Error and Success Messages */
+.message {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+.message.error {
+    background-color: #ff4d4d;
+    color: #fff;
+}
+.message.success {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+
+/* Events Grid */
+.events-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.event {
+    background: #2c2c2c;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    transition: transform 0.2s ease;
+}
+
+.event:hover {
+    transform: translateY(-5px);
+}
+
+.event h2 {
+    margin-top: 0;
+    color: #00aaff;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+}
+
+.odds {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.outcome-button {
+    flex-grow: 1;
+    text-align: center;
+    padding: 12px 15px;
+    background: #444;
+    border: 1px solid #666;
+    text-decoration: none;
+    color: #f0f0f0;
+    border-radius: 5px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.outcome-button:hover {
+    background: #00aaff;
+    border-color: #00aaff;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background: #2c2c2c;
+    border-top: 1px solid #444;
+}
